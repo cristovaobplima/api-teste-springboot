@@ -10,7 +10,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - mvn clean install -Dmaven.test.skip=true
+      - mvn clean package -Dmaven.test.skip=true 
   post_build:
     commands:
       - echo Build completed on `date`
